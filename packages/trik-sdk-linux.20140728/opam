@@ -1,0 +1,13 @@
+opam-version: "1"
+maintainer: "whitequark@whitequark.org"
+build: [
+  ["chmod" "+x" "trik-sdk-i686-armv5te-toolchain-trik-nodistro.0.sh"]
+  ["./trik-sdk-i686-armv5te-toolchain-trik-nodistro.0.sh" "-d" "%{lib}%/trik-sdk-linux" "-y" ]
+#  ["ln" "-sf" "android-ndk-r%{version}%" "%{lib}%/android-ndk"]
+]
+remove: [
+  ["rm" "-rf" "%{lib}%/trik-sdk-linux" ]
+]
+flags: [light-uninstall]
+os: ["linux"]
+
