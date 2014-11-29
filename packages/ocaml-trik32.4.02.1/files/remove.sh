@@ -7,5 +7,5 @@ for bin in ocaml ocamlbuild ocamlbuild.byte ocamlc ocamlcp ocamldebug ocamldep o
 done
 
 rm -rf "${PREFIX}/arm-oe-linux-gnueabi/"
-rm -rf "${PREFIX}/lib/findlib.conf.d/oe-trik.conf"
+rm -rf "${PREFIX}/lib/findlib.conf.d/trik.conf"
 

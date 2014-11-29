@@ -1,0 +1,11 @@
+path(trik) = "%{prefix}%/arm-oe-linux-gnueabi/lib"
+destdir(trik) = "%{prefix}%/arm-oe-linux-gnueabi/lib"
+stdlib(trik) = "%{prefix}%/arm-oe-linux-gnueabi/lib/ocaml"
+ocamlc(trik) = "%{prefix}%/arm-oe-linux-gnueabi/bin/ocamlc"
+ocamlopt(trik) = "%{prefix}%/arm-oe-linux-gnueabi/bin/ocamlopt"
+ocamlcp(trik) = "%{prefix}%/arm-oe-linux-gnueabi/bin/ocamlcp"
+ocamlmklib(trik) = "%{prefix}%/arm-oe-linux-gnueabi/bin/ocamlmklib"
+ocamlmktop(trik) = "%{prefix}%/arm-oe-linux-gnueabi/bin/ocamlmktop"
+ocamldoc(trik) = "%{prefix}%/arm-oe-linux-gnueabi/bin/ocamldoc"
+ocamldep(trik) = "%{prefix}%/arm-oe-linux-gnueabi/bin/ocamldep"
+

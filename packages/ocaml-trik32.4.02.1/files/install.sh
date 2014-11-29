@@ -16,5 +16,5 @@ for pkg in bigarray bytes compiler-libs dynlink findlib graphics num num-top oca
 done
 
 mkdir -p "${PREFIX}/lib/findlib.conf.d"
-cp oe-trik.conf "${PREFIX}/lib/findlib.conf.d"
+cp trik.conf "${PREFIX}/lib/findlib.conf.d"
 
