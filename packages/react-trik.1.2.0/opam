@@ -7,10 +7,16 @@ dev-repo: "http://erratique.ch/repos/react.git"
 bug-reports: "https://github.com/dbuenzli/react/issues"
 tags: [ "reactive" "declarative" "signal" "event" "frp" "org:erratique" ]
 license: "BSD3"
-depends: ["ocaml-android"]
+depends: ["ocaml-trik"]
+
 build: [
   ["ocaml" "pkg/git.ml"]
-  ["env" "OCAMLFIND_TOOLCHAIN=android" "ocaml" "pkg/build.ml" "native=%{ocaml-native}%" "native-dynlink=%{ocaml-native-dynlink}%"]
+  ["env" "OCAMLFIND_TOOLCHAIN=trik-oe" "ocaml" "pkg/build.ml" "native=%{ocaml-native}%" "native-dynlink=%{ocaml-native-dynlink}%"]
 ]
-install: [["opam-installer" "--prefix=%{prefix}%/linux-androideabi" "react.install"]]
-remove: [["ocamlfind" "-toolchain" "android" "remove" "react"]]
+install: [
+  ["opam-installer" "--prefix=%{prefix}%/arm-oe-linux-gnueabi" "react.install"]
+]
+remove: [
+  ["ocamlfind" "-toolchain" "android" "remove" "react"]
+]
+

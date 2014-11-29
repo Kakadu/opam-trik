@@ -1,0 +1,10 @@
+opam-version: "1"
+maintainer: "kakadu.hafanana@gmail.com"
+
+build: [
+#  ["ln" "-sfT" "arm-oe-linux-gnueabi" "%{prefix}%/arm-oe-linux-gnueabi" ]
+]
+depends: [
+  "ocaml-trik32"
+]
+
