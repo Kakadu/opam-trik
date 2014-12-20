@@ -10,13 +10,16 @@ license: "BSD3"
 depends: ["ocaml-trik"]
 
 build: [
-  ["ocaml" "pkg/git.ml"]
-  ["env" "OCAMLFIND_TOOLCHAIN=trik-oe" "ocaml" "pkg/build.ml" "native=%{ocaml-native}%" "native-dynlink=%{ocaml-native-dynlink}%"]
+#  ["ocaml" "pkg/git.ml"]
+  ["env" "OCAMLFIND_TOOLCHAIN=trik" "ocaml" "pkg/build.ml" "native=%{ocaml-native}%" "native-dynlink=%{ocaml-native-dynlink}%"]
+  ["rm" "-fr" "_build/src" ]
+  ["env" "OCAMLFIND_TOOLCHAIN=trik" "ocamlbuild" "-use-ocamlfind" "src/react.a" "src/react.cma" "src/react.cmxa"  ]
 ]
 install: [
-  ["opam-installer" "--prefix=%{prefix}%/arm-oe-linux-gnueabi" "react.install"]
+  ["ocamlfind" "-toolchain" "trik" "install" "react" "_build/pkg/META" "_build/src/react.a"    "_build/src/react.cmi"  "_build/src/react.cmt"   "_build/src/react.cmx"   "_build/src/react.o" "_build/src/react.cma"  "_build/src/react.cmo"  "_build/src/react.cmxa" ]
+#  [ "opam-installer" "--prefix=%{prefix}%/arm-oe-linux-gnueabi" "react.install"]
 ]
 remove: [
-  ["ocamlfind" "-toolchain" "android" "remove" "react"]
+  ["ocamlfind" "-toolchain" "trik" "remove" "react"]
 ]
 
